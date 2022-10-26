@@ -15,8 +15,18 @@ function requireAuth(req, res, next)
     next();
 }
 
-/* GET list of items */
-router.get('/list', contact_listController.contact_listList);
+/* GET list of items -DONE*/
+router.get('/list', contact_listController.list);
+
+/* GET Route for displaying the Add page - CREATE Operation -done*/
+router.get('/add_edit', requireAuth, contact_listController.displayAddPage);
+
+/* POST Route for processing the Add page - CREATE Operation -*/
+router.post('/add_edit', requireAuth, contact_listController.processAddPage);
+
+
+
+
 
 // Routers for edit
 router.get('/edit/:id', requireAuth, contact_listController.displayEditPage);
@@ -26,10 +36,9 @@ router.post('/edit/:id', requireAuth, contact_listController.processEditPage);
 router.get('/delete/:id', requireAuth, contact_listController.performDelete);
 
 
-/* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', requireAuth, contact_listController.displayAddPage);
 
-/* POST Route for processing the Add page - CREATE Operation */
-router.post('/add', requireAuth, contact_listController.processAddPage);
+
+//get= Display , post = execute
+//Note: 
 
 module.exports = router;

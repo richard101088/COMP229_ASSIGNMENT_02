@@ -1,4 +1,4 @@
-<%- include ('../partials/header') %>
+<%- include ('../partials/header'); %>
 
     <!-- <%= ContactList %> -->
 
@@ -8,7 +8,7 @@
         <h1><%= title %></h1>
         <br>
         <div>
-            <a href="/contact_list/add" class="btn btn-primary align-self-end" role="button">                
+            <a href="/contactList/add" class="btn btn-primary align-self-end" role="button">                
                 <i class="fa-solid fa-square-plus"></i>
                 Add a new Item
             </a>                
@@ -18,33 +18,26 @@
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr>
-                    <th class="text-center">Item</th>
-                    <th class="text-center">Qty</th>
-                    <th class="text-center">Status</th>
-                    <th>Size</th>
-                    <th class="text-center">Tags</th>
+                    <th class="text-center">Contact Name</th>
+                    <th class="text-center">Contact Number</th>
+                    <th class="text-center">Email Address</th>
                     <th class="text-center" colspan="2">Actions</th>
                 </tr>
 
                 <!-- Repeatable Template Row -->
+                <!-- Attributes from model folder -->
 
                 <% for(let i = 0; i < ContactList.length; i++) { %>
                     <tr>
-                        <td class="text-center"><%= ContactList[i].item %></td>
-                        <td class="text-center"><%= ContactList[i].qty %></td>
-                        <td class="text-center"><%= ContactList[i].status %></td>
-                        <td>
-                            Hight: <%= ContactList[i].size.h %><br/>
-                            Width: <%= ContactList[i].size.w %><br/>
-                            UOM: <%= ContactList[i].size.uom %><br/>
-                        </td>
-                        <td class="text-center"><%= ContactList[i].tags %></td>
+                        <td class="text-center"><%= ContactList[i].Contact_Name %></td>
+                        <td class="text-center"><%= ContactList[i].Contact_Number %></td>
+                        <td class="text-center"><%= ContactList[i].Email_Address %></td>
                         <td class="text-center">
-                            <a href="/contact_list/edit/<%= ContactList[i]._id %>" class="btn btn-primary btn-sm">
+                            <a href="/contactList/edit/<%= ContactList[i]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i></a>
                         </td>
                         <td class="text-center">
-                            <a href="/contact_list/delete/<%= ContactList[i]._id %>" class="btn btn-danger btn-sm">
+                            <a href="/contactList/delete/<%= ContactList[i]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
@@ -53,4 +46,4 @@
         </div>
     </div>
   </main>
-<%- include ('../partials/footer') %>
+<%- include ('../partials/footer'); %>

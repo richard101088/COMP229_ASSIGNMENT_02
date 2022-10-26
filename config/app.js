@@ -13,10 +13,12 @@ let passport = require('passport');
 //Routes declaration
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
-var inventoryRouter = require('../routes/inventory');
+// var inventoryRouter = require('../routes/inventory');
+var contact_listRouter = require('../routes/contact_list');
 
 var app = express();
 
+//To hold/keep the authentication of the users
 app.use(session({
   saveUninitialized: true,
   resave: true,
@@ -32,6 +34,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//To add static cookies
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
@@ -42,7 +46,8 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/inventory', inventoryRouter);
+// app.use('/inventory', inventoryRouter);
+app.use('/contact_list', contact_listRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

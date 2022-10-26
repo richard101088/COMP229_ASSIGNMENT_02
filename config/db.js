@@ -1,9 +1,9 @@
 
 // My mongodb connection string
 
-let atlasDB = "mongodb+srv://DB_user:WyVEbF1SM1uO7qF6@cluster018.tqgnut7.mongodb.net/products?retryWrites=true&w=majority";
+let atlasDB = "mongodb+srv://DB_user:WyVEbF1SM1uO7qF6@cluster018.tqgnut7.mongodb.net/dbapp?retryWrites=true&w=majority";
 
-let localDB = "mongodb://localhost:27017/products";
+// let localDB = "mongodb://localhost:27017/dbapp";
 
 let mongoose = require('mongoose');
 

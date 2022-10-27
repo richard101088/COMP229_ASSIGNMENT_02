@@ -21,19 +21,23 @@ router.get('/list', contact_listController.list);
 /* GET Route for displaying the Add page - CREATE Operation -done*/
 router.get('/add_edit', requireAuth, contact_listController.displayAddPage);
 
+// Delete -done
+router.get('/delete/:id', requireAuth, contact_listController.performDelete);
+
+
+
+
 /* POST Route for processing the Add page - CREATE Operation -*/
 router.post('/add_edit', requireAuth, contact_listController.processAddPage);
 
-
-
-
-
 // Routers for edit
-router.get('/edit/:id', requireAuth, contact_listController.displayEditPage);
-router.post('/edit/:id', requireAuth, contact_listController.processEditPage);
+router.get('/add_edit', requireAuth, contact_listController.displayEditPage);
+router.post('/add_edit/:id', requireAuth, contact_listController.processEditPage);
 
-// Delete
-router.get('/delete/:id', requireAuth, contact_listController.performDelete);
+// /:id'
+
+
+
 
 
 

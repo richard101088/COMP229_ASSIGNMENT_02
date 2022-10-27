@@ -15,3 +15,6 @@ let contact_listModel = mongoose.Schema(
 );
 
 module.exports = mongoose.model('Contact', contact_listModel);
+
+
+// contact_list

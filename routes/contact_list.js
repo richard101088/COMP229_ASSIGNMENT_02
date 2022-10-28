@@ -25,13 +25,13 @@ router.get('/add_edit', requireAuth, contact_listController.displayAddPage);
 router.get('/delete/:id', requireAuth, contact_listController.performDelete);
 
 
-
+//-------------------------------------------------------------------------------------------------
 
 /* POST Route for processing the Add page - CREATE Operation -*/
 router.post('/add_edit', requireAuth, contact_listController.processAddPage);
 
 // Routers for edit
-router.get('/add_edit', requireAuth, contact_listController.displayEditPage);
+router.get('/add_edit/:id', requireAuth, contact_listController.displayEditPage);
 router.post('/add_edit/:id', requireAuth, contact_listController.processEditPage);
 
 // /:id'

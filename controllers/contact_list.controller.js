@@ -76,7 +76,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('contactList/add_edit', {
+            res.render('contact_list/add_edit', {
                 title: 'Edit Item', 
                 item: itemToEdit,
                 userName: req.user ? req.user.username : ''
@@ -107,7 +107,7 @@ module.exports.processEditPage = (req, res, next) => {
         {
             // console.log(req.body);
             // refresh the book list
-            res.redirect('/contactList/list');
+            res.redirect('/contactList/add_edit');
         }
     });
 

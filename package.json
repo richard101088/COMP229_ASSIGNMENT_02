@@ -4,7 +4,7 @@
   "description": "COMP229.018 Code Example",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JViniX/COMP229.018.F2022.git"
+    "url": "git+https://github.com/richard101088/COMP229_ASSIGNMENT_02.git"
   },
   "keywords": [
     "NodeJS",
@@ -16,9 +16,9 @@
   "author": "Richard Antonio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JViniX/COMP229.018.F2022/issues"
+    "url": "https://github.com/richard101088/COMP229_ASSIGNMENT_02/issues"
   },
-  "homepage": "https://github.com/JViniX/COMP229.018.F2022#readme",
+  "homepage": "https://github.com/richard101088/COMP229_ASSIGNMENT_02#readme",
   "private": true,
   "scripts": {
     "start": "node ./server.js",

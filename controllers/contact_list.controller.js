@@ -1,20 +1,21 @@
-// create a reference to the model
+// create a reference to the model -from database
 let ContactModel = require('../models/contact_list');
 
 
-// Contact List function -done
-module.exports.list = function(req, res, next) {  
-    ContactModel.find((err, contact_listList) => {
-        console.log(contact_listList);
+// Contact List function -done -DISPLAYLIST is a function from router / richard_list - is a db declaration varName
+module.exports.DISPLAYLIST = function(req, res, next) {  
+    ContactModel.find((err, richard_list) => {
+        console.log(richard_list);
         if(err)
         {
             return console.error(err);
         }
         else
         {
+            //contact_list - from views ejs file
             res.render('contact_list/list', {
                 title: 'Contact List', 
-                ContactList: contact_listList,
+                ContactList: richard_list,
                 userName: req.user ? req.user.username : ''
             })            
         }
@@ -39,9 +40,9 @@ module.exports.processAddPage = (req, res, next) => {
 
     let newItem = ContactModel({
         _id:  req.body.id,
-        Contact_Name: req.body.Contact_Name,
-        Contact_Number: req.body.Contact_Number,
-        Email_Address: req.body.Email_Address
+        ContactName: req.body.ContactName,
+        ContactNumber: req.body.ContactNumber,
+        EmailAddress: req.body.EmailAddress
     });
 
     ContactModel.create(newItem, (err, item) =>{
@@ -92,9 +93,9 @@ module.exports.processEditPage = (req, res, next) => {
 
     let updatedItem = ContactModel({
         _id:  req.body.id,
-        Contact_Name: req.body.Contact_Name,
-        Contact_Number: req.body.Contact_Number,
-        Email_Address: req.body.Email_Address
+        ContactName: req.body.ContactName,
+        ContactNumber: req.body.ContactNumber,
+        EmailAddress: req.body.EmailAddress
     });
 
     ContactModel.updateOne({_id: id}, updatedItem, (err) => {

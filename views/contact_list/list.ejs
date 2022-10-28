@@ -29,9 +29,9 @@
 
                 <% for(let i = 0; i < ContactList.length; i++) { %>
                     <tr>
-                        <td class="text-center"><%= ContactList[i].Contact_Name %></td>
-                        <td class="text-center"><%= ContactList[i].Contact_Number %></td>
-                        <td class="text-center"><%= ContactList[i].Email_Address %></td>
+                        <td class="text-center"><%= ContactList[i].ContactName %></td>
+                        <td class="text-center"><%= ContactList[i].ContactNumber %></td>
+                        <td class="text-center"><%= ContactList[i].EmailAddress %></td>
                         <td class="text-center">
                             <a href="/contactList/add_edit/<%= ContactList[i]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i></a>

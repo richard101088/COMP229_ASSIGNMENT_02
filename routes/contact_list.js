@@ -16,7 +16,7 @@ function requireAuth(req, res, next)
 }
 
 /* GET list of items -DONE*/
-router.get('/list', contact_listController.list);
+router.get('/list', contact_listController.DISPLAYLIST);
 
 /* GET Route for displaying the Add page - CREATE Operation -done*/
 router.get('/add_edit', requireAuth, contact_listController.displayAddPage);

@@ -43,6 +43,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Sets up routers
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contactList', contactListRouter);
